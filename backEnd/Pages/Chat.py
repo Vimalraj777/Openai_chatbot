@@ -2,8 +2,8 @@ from fastapi import APIRouter , HTTPException
 from Schema.ChatSchema import Chatschema
 from Configurations.config import secret
 import openai
-# openai.api_key = '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'
-openai.api_key = secret.api_key
+openai.api_key = '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'
+# openai.api_key = secret.api_key
 
 
 app=APIRouter()
@@ -21,4 +21,6 @@ def Chat(data:Chatschema):
       return response.choices[0].message.content
     except openai.RateLimitError as e:
         raise HTTPException(status_code=429,detail="Rate Limit Reached.Please try again later.")
+    except openai.AuthenticationError as e:
+       raise HTTPException(status_code=401,detail=f"Authentication Failed!")
     
