@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from Pages import Chat
-import os
-test = os.environ['openai_apikey']
-print('test',test)
+
 app = FastAPI()
 app.include_router(Chat.app)
 
