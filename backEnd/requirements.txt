@@ -5,12 +5,14 @@ click
 colorama
 distro
 fastapi
+gunicorn
 h11
 httpcore
 httptools
 httpx
 idna
 openai
+packaging
 pydantic
 pydantic-settings
 pydantic_core
