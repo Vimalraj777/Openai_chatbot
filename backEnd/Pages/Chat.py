@@ -14,7 +14,7 @@ def Chat(data:Chatschema):
       response = openai.chat.completions.create(
           model="gpt-3.5-turbo",  # You can use other models as well
           messages=[{"role": "user", "content": data.userinput}],
-          max_tokens=150,  # Adjust as needed
+          max_tokens=5000,  # Adjust as needed
           temperature=0.7,  # Adjust for more randomness (0.0 to 1.0)
       )
 
